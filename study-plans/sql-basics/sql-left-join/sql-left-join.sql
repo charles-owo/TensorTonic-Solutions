@@ -1,0 +1,1 @@
+SELECT c.name, c.city , coalesce(sum(o.amount),0) as total_spent FROM customers c LEFT JOIN orders o ON c.id = o.customer_id GROUP BY c.name, c.city ORDER BY total_spent DESC, name ASC;
